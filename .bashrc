@@ -15,6 +15,7 @@ test -s ~/.functions && . ~/.functions
 test -s ~/.bashrc_private && . ~/.bashrc_private
 
 export PATH=$PATH:~/gradle/bin:~/android-ndk-r18b:~/android-sdk/platform-tools
+export BORG_PASSPHRASE BORG_REPO
 
 unset JAVA_BINDIR JAVA_ROOT JAVA_HOME
 
