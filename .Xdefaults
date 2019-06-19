@@ -1,0 +1,39 @@
+Xft*dpi: 192
+!URxvt*font: -xos4-terminus-medium-r-normal--32-320-72-72-c-160-iso10646-1
+URxvt*font: xft:Inconsolata
+!URxvt.letterSpace: -1
+!URxvt.termName: xterm-256color
+URxvt.termName: rxvt-unicode-256color
+URxvt*background: #1C1F22
+!URxvt*background: #32312E
+URxvt*foreground: white
+URxvt*scrollBar: false
+
+! Black + DarkGrey
+*color0:  #000000
+*color8:  #555753
+! DarkRed + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+! DarkGreen + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3:  #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4:  #204a87
+*color12: #3465a4
+! DarkMagenta + Magenta
+*color5:  #ce5c00
+*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*color6:  #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7:  #cccccc
+*color15: #ffffff
+
+XTerm*faceName: xft:Inconsolata
+
+emacs.reverseVideo: true

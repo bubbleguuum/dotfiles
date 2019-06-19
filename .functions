@@ -1,0 +1,17 @@
+playstream() {
+    ffmpeg -i $1 -f wav - 2>/dev/null | aplay 2>/dev/null
+}
+
+whyfile() {
+    package=`rpm -qf $1 --qf "%{NAME}"`
+    echo -e "\nPackage: $package\n"
+    why $package
+}
+
+whycmd() {
+    whyfile `which $1`   
+}
+
+pkgchg() {
+    rpm -q --changelog $1 | less
+}

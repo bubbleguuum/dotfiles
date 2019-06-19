@@ -1,0 +1,9 @@
+[user]
+	email = bubbleguuum@free.fr
+	name = bubbleguuum
+[credential]
+	helper = cache --timeout=3600
+[core]
+	editor = emacs
+	excludesfile = /home/bobbie/.gitignore_global
+	autocrlf = input

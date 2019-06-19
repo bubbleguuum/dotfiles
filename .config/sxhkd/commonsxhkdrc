@@ -1,0 +1,6 @@
+super + alt + d
+        xrandr --output DP-0 --auto --output eDP-1-1 --off
+
+super + alt + f
+        xrandr --output eDP-1-1 --auto --output DP-0 --off
+
