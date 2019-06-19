@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily backup
+
+[Service]
+EnvironmentFile=%h/.bashrc_private
+Type=oneshot
+ExecStart=/usr/bin/borgmatic
+
