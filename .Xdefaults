@@ -8,6 +8,9 @@ URxvt*background: #1C1F22
 !URxvt*background: #32312E
 URxvt*foreground: white
 URxvt*scrollBar: false
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
 
 ! Black + DarkGrey
 *color0:  #000000
