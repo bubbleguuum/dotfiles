@@ -17,12 +17,17 @@ export GDK_DPI_SCALE=0.5
 # useful even on i3 for using Plasma apps on i3
 export XDG_CURRENT_DESKTOP=KDE
 
-#export QT_SCREEN_SCALE_FACTOR=2
-
 # enables automatic scaling, based on the pixel density of the monitor.
 # This will not change the size of point sized fonts, since point is a physical unit of measure.
 # Multiple screens may get different scale factors
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# WARNING: startkde set this to 0
+#export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
+# for use when QT_AUTO_SCREEN_SCALE_FACTOR does not work: eg for eDP-1-1 latop panel (EDID issue)
+# WARNING: overwritten by startkde taking scale factor configured in kscreen5 and written to .config/kdeglobals
+# problematic when switching between modesetting and nvidia driver because laptop panel name changes (see below) 
+# WARNING: latop panel is eDP-1 on modesetting driver, eDP1 on intel driver and eDP-1-1 on NVIDIA driver !!! DP-0 is NVIDIA specific (DisplayPort)
+export QT_SCREEN_SCALE_FACTORS="eDP1=2;eDP-1=2;eDP-1-1=2;DP-0=2"
 
 # fixes scaling of Plasma UI (icons, widget spacing, ...)
 export PLASMA_USE_QT_SCALING=1
