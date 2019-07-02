@@ -6,7 +6,8 @@ This config elaborated on openSUSE Tumbleweed starts:
 - Plasma if login on tty2 console
 - Plasma  + i3 (replacing kwin) on tty3 console
 
-It's also compatible with Display Managers.
+Although it is primarly used to login on the console, it is also compatible with Display Managers with
+proper separation of stuff in files where they belong (.profile, .xinitrc, .xprofile, .bashrc)
 
 It is tweaked for a 27" 4K screen, using 192dpi for fonts and 2x scaling for Plasma.
 
