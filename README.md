@@ -11,5 +11,6 @@ proper separation of stuff in files where they belong (.profile, .xinitrc, .xpro
 
 It is tweaked for a 27" 4K screen, using 192dpi for fonts and 2x scaling for Plasma.
 
-It uses some common shortcuts between i3 and Plasma for muscle memory.
+It uses some common keyboard shortcuts between i3 and Plasma for muscle memory.
 
+Common shortcuts are handled by sxhkd while i3 specific shortcuts are handled in i3's config.
