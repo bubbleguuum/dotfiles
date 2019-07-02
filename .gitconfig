@@ -7,3 +7,5 @@
 	editor = emacs
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
+[gui]
+	recentrepo = /home/bobbie/git_projects/acpilight

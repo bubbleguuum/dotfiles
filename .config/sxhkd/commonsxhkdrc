@@ -4,3 +4,13 @@ super + alt + d
 super + alt + f
         xrandr --output eDP-1-1 --auto --output DP-0 --off
 
+XF86Display
+	xset dpms force off
+
+XF86Explorer
+	dolphin
+
+XFLaunchA
+	firefox
+	
+	

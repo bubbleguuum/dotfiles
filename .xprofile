@@ -16,6 +16,13 @@ XHKDRCDIR=~/.config/sxhkd
 cp $XHKDRCDIR/commonsxhkdrc $XHKDRCDIR/sxhkdrc
 if [ "$1" = "startkde" ]; then
    cat $XHKDRCDIR/kdesxhkdrc >> $XHKDRCDIR/sxhkdrc
+elif [ "$1" = "i3" ]; then
+
+     # not strictly needed but avoid starting dolphin under i3 resulting in failure to start /usr/lib64/libexec/kactivitymanagerd
+     # with a non-fatal crash (SIGABRT) in journalctl
+     # this command is started in /usr/bin/startkde
+     
+     dbus-update-activation-environment --systemd --all
 fi
 
 sxhkd &
