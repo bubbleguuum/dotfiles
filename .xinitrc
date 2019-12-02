@@ -10,16 +10,17 @@ cmd=$1
 
 if [ "$cmd" = "startkde_i3" ]; then
     export KDEWM=/usr/bin/i3
-    cmd=startkde
+    cmd=startplasma-x11
     i3config=config.kde    
 elif [ "$cmd" = "i3" ]; then
     i3config=config.i3    
 fi
 
 if [ -n "$i3config" ]; then
-    confdir=~/.config/i3
-    cat $confdir/config.common $confdir/$i3config > $confdir/config
+    . ~/.functions
+    geni3conf $i3config
 fi    
 
-exec $cmd
+$cmd
 
+sudo ~/bin/backlight_on.sh

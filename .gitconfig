@@ -9,3 +9,9 @@
 	autocrlf = input
 [gui]
 	recentrepo = /home/bobbie/git_projects/acpilight
+[filesystem "Oracle Corporation|11.0.4|/dev/mapper/home"]
+	timestampResolution = 9000 nanoseconds
+	minRacyThreshold = 6757 microseconds
+[filesystem "Oracle Corporation|11.0.5|/dev/mapper/home"]
+	timestampResolution = 7000 nanoseconds
+	minRacyThreshold = 7849 microseconds

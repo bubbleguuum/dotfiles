@@ -1,16 +1,17 @@
-Xft*dpi: 192
+Xft.dpi: 183
 !URxvt*font: -xos4-terminus-medium-r-normal--32-320-72-72-c-160-iso10646-1
-URxvt*font: xft:Inconsolata
+URxvt.font: xft:Inconsolata
 !URxvt.letterSpace: -1
 !URxvt.termName: xterm-256color
 URxvt.termName: rxvt-unicode-256color
-URxvt*background: #1C1F22
-!URxvt*background: #32312E
-URxvt*foreground: white
-URxvt*scrollBar: false
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
+URxvt.background: #1C1F22
+!URxvt.background: #32312E
+URxvt.foreground: white
+URxvt.scrollBar: false
+URxvt.saveLines: 20000
+#URxvt.perl-ext-common: default,matcher
+#URxvt.url-launcher: /usr/bin/xdg-open
+#URxvt.matcher.button: 1
 
 ! Black + DarkGrey
 *color0:  #000000

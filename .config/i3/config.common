@@ -183,8 +183,12 @@ exec --no-startup-id compton --backend glx --vsync --xrender-sync-fence
 exec --no-startup-id hsetroot -solid "#1C1F22"
 
 
+
+
 #exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1'
 #exec --no-startup-id i3-msg 'workspace 3; exec thunderbird; workspace 1'
+
+#workspace 5 output eDP-1-1 
 
 workspace_layout tabbed
 default_border pixel 1
@@ -202,6 +206,9 @@ for_window [window_type="menu"]                         floating enable
 
 # Android emulator
 for_window [title=".*Emulator.*"] floating enable
-assign [title=".*Emulator.*"] 4
+assign [title=".*Emulator.*"] 5
 
-
+# Scratchpad terminal
+#exec urxvtc-256color -title scratch-terminal
+#for_window [title="scratch-terminal"] floating enable, move to scratchpad
+#bindsym $mod+shift+t [title="scratch-terminal"] scratchpad show

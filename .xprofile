@@ -1,13 +1,19 @@
 # loaded by session managers: GDM, LightDM, LXDM, SDDM
 # sourced by .xinitrc when using startx or xinit
 
-if xrandr | grep "DP-0 connected" > /dev/null; then
-    xrandr --output eDP-1-1 --auto --output DP-0 --off
-fi
+# switch laptop panel on, external monitor off
+xrandr --output $INTERNAL_PANEL --auto --output $EXTERNAL_MONITOR --off
 
-xrandr --dpi 192
+#if xrandr | grep "$EXTERNAL_MONITOR connected" > /dev/null; then
+#     xrandr --output $EXTERNAL_MONITOR --auto --right-of $INTERNAL_PANEL
+#     sudo ~/bin/backlight_off.sh
+#fi
+
+xrandr --dpi 183
+#fix-dpi
+
 xrdb -merge ~/.Xdefaults
-xinput disable 'ETPS/2 Elantech Touchpad'
+xinput disable 'Elan Touchpad'
 setxkbmap -layout us -variant altgr-intl -option caps:super
 xset r rate 300 50 
 urxvtd-256color -o -f -q
@@ -26,5 +32,7 @@ elif [ "$1" = "i3" ]; then
 fi
 
 sxhkd &
+
+
 
 

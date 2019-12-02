@@ -1,8 +1,14 @@
 super + alt + d
-        xrandr --output DP-0 --auto --output eDP-1-1 --off
+        xrandr --output $EXTERNAL_MONITOR --auto --output $INTERNAL_PANEL --off
 
 super + alt + f
-        xrandr --output eDP-1-1 --auto --output DP-0 --off
+        xrandr --output $INTERNAL_PANEL --auto --output $EXTERNAL_MONITOR --off
+
+super + alt + g
+        xrandr --output $INTERNAL_PANEL --auto --output $EXTERNAL_MONITOR --auto --right-of eDP-1-1
+
+XF86WLAN
+      	sudo ~/bin/backlight_toggle.sh
 
 XF86Display
 	xset dpms force off

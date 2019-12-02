@@ -10,9 +10,15 @@ test -z "$PROFILEREAD" && . /etc/profile || true
 export PATH="$PATH:~/bin"
 export JAVA_HOME=/usr/lib64/jvm/java-1.8.0-openjdk-1.8.0
 
+# GTK3 theme
 export GTK_THEME=Shades-of-gray
+
+# GTK2 theme, can also be set in ~/.gtkrc-2.0
+export GTK2_RC_FILES=~/.themes/Shades-of-gray/gtk-2.0/gtkrc
+
 export GDK_SCALE=2 
 export GDK_DPI_SCALE=0.5
+#systemctl --user import-environment GDK_SCALE GDK_DPI_SCALE
 
 # useful even on i3 for using Plasma apps on i3
 export XDG_CURRENT_DESKTOP=KDE
@@ -45,13 +51,19 @@ export EDITOR="$VISUAL"
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
+export EXTERNAL_MONITOR="DP-0"
+export INTERNAL_PANEL="eDP-1-1"
+
+# for gldoom
+export VK_ICD_FILENAMES=/etc/vulkan/icd.d/nvidia_icd.json
+
 # poor's man console Display Manager:
 # login on tty1 starts i3, on tty2 starts Plasma
 
 if [ "$(tty)" = "/dev/tty1" ]; then
      exec startx ~/.xinitrc i3 
 elif [ "$(tty)" = "/dev/tty2" ]; then 
-     exec startx ~/.xinitrc startkde 
+     exec startx ~/.xinitrc startplasma-x11 
 elif [ "$(tty)" = "/dev/tty3" ]; then 
      exec startx ~/.xinitrc startkde_i3 
 fi 

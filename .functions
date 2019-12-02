@@ -3,15 +3,32 @@ playstream() {
 }
 
 whyfile() {
-    package=`rpm -qf $1 --qf "%{NAME}"`
+    package=$(rpm -qf $1 --qf "%{NAME}")
+    ret=$?
     echo -e "\nPackage: $package\n"
-    why $package
+    (( $ret == 0)) || return
+    whypkg $package
 }
 
 whycmd() {
-    whyfile `which $1`   
+    file=$(which $1)
+    (($? == 0)) || return
+    whyfile $file
+}
+
+whypkg() {
+	 if zypper pa --orphaned | grep "| $1 " > /dev/null; then
+	    echo "Package $1 is orphaned"
+	    return 
+	 fi
+	 zypper se -i -x -v --requires --recommends --suggests $1
 }
 
 pkgchg() {
     rpm -q --changelog $1 | less
+}
+
+geni3conf() {
+    confdir=~/.config/i3
+    cat $confdir/config.common $confdir/$1 > $confdir/config
 }
