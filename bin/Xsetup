@@ -1,0 +1,41 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+
+# switch laptop panel on, external monitor off
+
+#Using P72
+export EXTERNAL_MONITOR="DP-0"
+export INTERNAL_PANEL="eDP-1-1"
+
+#Using Mini-PC
+#export EXTERNAL_MONITOR="DP1"
+
+if xrandr | grep "$INTERNAL_PANEL connected" > /dev/null; then
+    xrandr --output $INTERNAL_PANEL --auto --output $EXTERNAL_MONITOR --off
+fi    
+
+if xrandr | grep "$EXTERNAL_MONITOR connected" > /dev/null; then
+    dpi=183
+
+    #xrandr --output $EXTERNAL_MONITOR --mode 3840x2160
+
+    #xrandr --output $EXTERNAL_MONITOR --auto --right-of $INTERNAL_PANEL
+    #sudo ~/bin/backlight_off.sh
+
+else
+    dpi=240
+fi
+
+
+#xrandr --output HDMI1 --set "Broadcast RGB" "Full"
+
+xrandr --dpi $dpi
+echo "Xft.dpi: $dpi" | xrdb -merge
+
+xinput disable 'Elan Touchpad'
+#setxkbmap -layout us -variant altgr-intl -option caps:super
+setxkbmap -layout us -variant altgr-intl 
+xset r rate 300 50
+
+
+
