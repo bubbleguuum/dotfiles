@@ -1,5 +1,6 @@
 [Unit]
 Description=Daily backup
+ConditionACPower=true
 
 [Service]
 EnvironmentFile=%h/.bashrc_private

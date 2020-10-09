@@ -12,12 +12,6 @@
 
 test -s ~/.alias && . ~/.alias 
 test -s ~/.functions && . ~/.functions 
-test -s ~/.bashrc_private && . ~/.bashrc_private
-
-export PATH=$PATH:~/gradle/bin:~/android-ndk-r18b:~/android-sdk/platform-tools
-export BORG_PASSPHRASE BORG_REPO
-
-unset JAVA_BINDIR JAVA_ROOT JAVA_HOME
 
 # Disable ctrl-s and ctrl-q.
 stty -ixon
@@ -25,6 +19,6 @@ stty -ixon
 #Allows you to cd into directory merely by typing the directory name.
 shopt -s autocd
 
-
+. ~/bash_completion.d/gradle-completion.bash
 
 

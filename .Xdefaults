@@ -1,6 +1,6 @@
-Xft.dpi: 183
+!Xft.dpi: 240
 !URxvt*font: -xos4-terminus-medium-r-normal--32-320-72-72-c-160-iso10646-1
-URxvt.font: xft:Inconsolata
+Rxvt.font: xft:mono:size=10
 !URxvt.letterSpace: -1
 !URxvt.termName: xterm-256color
 URxvt.termName: rxvt-unicode-256color
@@ -38,6 +38,6 @@ URxvt.saveLines: 20000
 *color7:  #cccccc
 *color15: #ffffff
 
-XTerm*faceName: xft:Inconsolata
+XTerm*faceName: xft:mono
 
 emacs.reverseVideo: true

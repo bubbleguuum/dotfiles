@@ -7,11 +7,14 @@ super + alt + f
 super + alt + g
         xrandr --output $INTERNAL_PANEL --auto --output $EXTERNAL_MONITOR --auto --right-of eDP-1-1
 
+super + alt + h
+        xrandr --output DP1 --mode 3840x2160
+
 XF86WLAN
       	sudo ~/bin/backlight_toggle.sh
 
 XF86Display
-	xset dpms force off
+	sh -c "sleep 0.25 && xset dpms force off"
 
 XF86Explorer
 	dolphin

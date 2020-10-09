@@ -7,6 +7,7 @@ whyfile() {
     ret=$?
     echo -e "\nPackage: $package\n"
     (( $ret == 0)) || return
+    zypper if $package
     whypkg $package
 }
 
@@ -31,4 +32,16 @@ pkgchg() {
 geni3conf() {
     confdir=~/.config/i3
     cat $confdir/config.common $confdir/$1 > $confdir/config
+}
+
+borgmount() {
+    snapshot=$1
+    mountpoint=~/mnt/borg
+    [ -z "$snapshot" ] && snapshot=$(borg list | tail -1 | cut -f 1 -d ' ')
+    borg mount $BORG_REPO::$snapshot $mountpoint && echo "mounted snapshot: $snapshot" && cd $mountpoint
+}
+
+borgumount() {
+    cd ~	     
+    borg umount ~/mnt/borg 	     
 }

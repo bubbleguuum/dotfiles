@@ -1,34 +1,19 @@
 # loaded by session managers: GDM, LightDM, LXDM, SDDM
 # sourced by .xinitrc when using startx or xinit
 
-# switch laptop panel on, external monitor off
-xrandr --output $INTERNAL_PANEL --auto --output $EXTERNAL_MONITOR --off
-
-#if xrandr | grep "$EXTERNAL_MONITOR connected" > /dev/null; then
-#     xrandr --output $EXTERNAL_MONITOR --auto --right-of $INTERNAL_PANEL
-#     sudo ~/bin/backlight_off.sh
-#fi
-
-xrandr --dpi 183
-#fix-dpi
-
-xrdb -merge ~/.Xdefaults
-xinput disable 'Elan Touchpad'
-setxkbmap -layout us -variant altgr-intl -option caps:super
-xset r rate 300 50 
 urxvtd-256color -o -f -q
 
 XHKDRCDIR=~/.config/sxhkd
 cp $XHKDRCDIR/commonsxhkdrc $XHKDRCDIR/sxhkdrc
-if [ "$1" = "startkde" ]; then
-   cat $XHKDRCDIR/kdesxhkdrc >> $XHKDRCDIR/sxhkdrc
-elif [ "$1" = "i3" ]; then
+if [ "$1" = "i3" ]; then
 
      # not strictly needed but avoid starting dolphin under i3 resulting in failure to start /usr/lib64/libexec/kactivitymanagerd
      # with a non-fatal crash (SIGABRT) in journalctl
      # this command is started in /usr/bin/startkde
      
      dbus-update-activation-environment --systemd --all
+else 
+   cat $XHKDRCDIR/kdesxhkdrc >> $XHKDRCDIR/sxhkdrc
 fi
 
 sxhkd &

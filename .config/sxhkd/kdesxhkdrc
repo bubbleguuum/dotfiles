@@ -1,10 +1,9 @@
-# Basic binds
 #super + Return
 #      	urxvtc-256color
 
-super + d
-        qdbus org.kde.kglobalaccel /component/krunner org.kde.kglobalaccel.Component.invokeShortcut 'run command'
+#super + d
+#        qdbus-qt5 org.kde.kglobalaccel /component/krunner_desktop org.kde.kglobalaccel.Component.invokeShortcut _launch
 
-super + shift + e
-        qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+#super + shift + e
+#        qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 
