@@ -1,0 +1,6 @@
+! White background
+! light cyan 
+URxvt.background: #F2F3F7
+URxvt.foreground: black
+
+emacs.reverseVideo: false

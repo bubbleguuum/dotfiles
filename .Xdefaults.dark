@@ -1,0 +1,7 @@
+! Black background
+! close to black
+URxvt.background: #1C1F22
+URxvt.foreground: white
+
+!reverseVideo used in conjunction with ~/.emacs for proper dark colors
+emacs.reverseVideo: true

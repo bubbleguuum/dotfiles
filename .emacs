@@ -40,7 +40,7 @@
   ;; we set the default file ~/.gnu-emacs-custom
   (setq custom-file "~/.gnu-emacs-custom")
   (load "~/.gnu-emacs-custom" t t)
-  (if (eq window-system 'x)
+  (if (and (equal "" (getenv "USE_LIGHT_THEME")) (eq window-system 'x))
       (set-background-color "#1C1F22"))
 ;;;
 )

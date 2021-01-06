@@ -1,5 +1,5 @@
 super + alt + d
-        xrandr --output $EXTERNAL_MONITOR --auto --output $INTERNAL_PANEL --off
+        xrandr --output $EXTERNAL_MONITOR --auto --output $INTERNAL_PANEL --off ; [ -n "$BW" ] && nvidia-settings -a DigitalVibrance=-1024 || nvidia-settings -a DigitalVibrance=0
 
 super + alt + f
         xrandr --output $INTERNAL_PANEL --auto --output $EXTERNAL_MONITOR --off
@@ -10,6 +10,9 @@ super + alt + g
 super + alt + h
         xrandr --output DP1 --mode 3840x2160
 
+super + alt + c
+      	toggle_bw_color.sh
+	
 XF86WLAN
       	sudo ~/bin/backlight_toggle.sh
 

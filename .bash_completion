@@ -1,0 +1,3 @@
+# Sourced by /etc/bash.bashrc
+
+. ~/bash_completion.d/gradle-completion.bash

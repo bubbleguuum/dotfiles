@@ -43,9 +43,3 @@ URxvt.saveLines: 20000
 
 #Xcursor.theme: Adwaita
 #Xcursor.size: 64
-! White background
-! light cyan 
-URxvt.background: #F2F3F7
-URxvt.foreground: black
-
-emacs.reverseVideo: false

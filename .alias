@@ -13,3 +13,4 @@ alias mem='smem -tk'
 alias poweroff='/usr/sbin/poweroff'
 alias se=sudoedit
 alias btrfsdu='sudo ~/bin/btrfs-du /'
+alias smem='smem -ka'
