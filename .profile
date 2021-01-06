@@ -7,11 +7,6 @@
 
 test -z "$PROFILEREAD" && . /etc/profile || true
 
-# also used in ~/.config/sxhkd/commonsxhkdrc to set DigitalVibrance
-export BW=y
-
-# also used in .emacs
-export USE_LIGHT_THEME=y
 
 test -s ~/.bashrc_private && . ~/.bashrc_private
 export BORG_PASSPHRASE BORG_REPO
@@ -26,38 +21,6 @@ export PATH=$PATH:~/gradle/bin:~/android-ndk-r18b:~/Android/Sdk/platform-tools:~
 unset JAVA_BINDIR JAVA_ROOT JAVA_HOME
 export JAVA_HOME=/usr/lib64/jvm/java-1.8.0-openjdk-1.8.0
 export GRAALVM_HOME=~/graalvm-ce-java11-20.3.0
-
-if [ -n "$USE_LIGHT_THEME" ]; then
-    # Light theme
-    
-    export GTK_THEME=Adwaita
-    (cd ~/nf5sc5cv.default/chrome && rm userChrome.css)
-    (cd ~ && cat .Xdefaults.common .Xdefaults.light > .Xdefaults)
-    
-else
-    # Dark theme
-    
-    # GTK2 theme, can also be set in ~/.gtkrc-2.0
-    export GTK2_RC_FILES=~/.themes/Shades-of-gray/gtk-2.0/gtkrc
-    export GTK_THEME=Shades-of-gray
-    #export GTK_THEME=Adwaita:dark
-    (cd ~/nf5sc5cv.default/chrome && cp userChrome_shades_of_gray.css userChrome.css)
-    (cd ~ && cat .Xdefaults.common .Xdefaults.dark > .Xdefaults)
-
-fi
-
-if [ -n "$BW" ]; then
-
-    # Black and White
-
-    # remove color=--tty option, add --file-type
-    export LS_OPTIONS="-N -T 0 --file-type"
-    cp ~/.dir_colors_bw ~/.dir_colors
-else
-    # Color
-    cp ~/.dir_colors_color ~/.dir_colors
-fi
-
 
 export GDK_SCALE=2 
 export GDK_DPI_SCALE=0.5

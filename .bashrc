@@ -19,5 +19,11 @@ stty -ixon
 #Allows you to cd into directory merely by typing the directory name.
 shopt -s autocd
 
+[ -n "$BW" ] && export LS_OPTIONS="$LS_OPTIONS --file-type"
+
+
+
+
+
 
 

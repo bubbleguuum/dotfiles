@@ -1,6 +1,49 @@
 # loaded by session managers: GDM, LightDM, LXDM, SDDM
 # sourced by .xinitrc when using startx or xinit
 
+# also used in:
+# ~/.config/sxhkd/commonsxhkdrc to set DigitalVibrance
+# ~/.bashrc
+export BW=y
+
+# also used in ~/.emacs
+export USE_LIGHT_THEME=y
+
+if [ -n "$USE_LIGHT_THEME" ]; then
+    # Light theme
+    
+    export GTK_THEME=Adwaita
+    (cd ~/nf5sc5cv.default/chrome && rm -f userChrome.css)
+    (cd ~ && cat .Xdefaults.common .Xdefaults.light > .Xdefaults)
+    
+else
+    # Dark theme
+    
+    # GTK2 theme, can also be set in ~/.gtkrc-2.0
+    export GTK2_RC_FILES=~/.themes/Shades-of-gray/gtk-2.0/gtkrc
+    export GTK_THEME=Shades-of-gray
+    #export GTK_THEME=Adwaita:dark
+    (cd ~/nf5sc5cv.default/chrome && cp userChrome_shades_of_gray.css userChrome.css)
+    (cd ~ && cat .Xdefaults.common .Xdefaults.dark > .Xdefaults)
+fi
+
+if [ -n "$BW" ]; then
+    # Black and White
+
+    export LS_OPTIONS="$LS_OPTIONS --file-type"
+    # no color except folders are bold
+    DIRCOLORS_FILE=.dir_colors_bw
+
+    # restore color ls when exiting Xorg
+    trap "cp ~/.dir_colors_color ~/.dir_colors" EXIT
+
+else
+    # Color
+    DIRCOLORS_FILE=.dir_colors_color 
+fi
+
+cp ~/$DIRCOLORS_FILE ~/.dir_colors
+
 urxvtd-256color -o -f -q
 
 XHKDRCDIR=~/.config/sxhkd

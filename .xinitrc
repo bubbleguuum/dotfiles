@@ -35,7 +35,7 @@ fi
 if [ -n "$i3config" ]; then
     . ~/.functions
     geni3conf $i3config
-fi    
+fi
 
 export WINDOWMANAGER
 #/etc/X11/xinit/xinitrc
